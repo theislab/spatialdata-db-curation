@@ -1,4 +1,6 @@
-theme: jekyll-theme-cayman
+theme: minima
+minima:
+  skin: dark
 title: SpatialData-DB Curation
 description: Registry viewer and submission tools for SpatialData-DB
 plugins: []

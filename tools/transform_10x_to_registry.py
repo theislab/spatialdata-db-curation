@@ -6,7 +6,8 @@ import csv
 import os
 from typing import List, Dict
 
-from canon import canonical_source, fingerprint, ensure_fingerprints_row
+from canon import canonical_source, fingerprint
+from datetime import date
 
 
 def map_row(src: Dict[str, str]) -> Dict[str, str]:
@@ -22,26 +23,24 @@ def map_row(src: Dict[str, str]) -> Dict[str, str]:
         "dataset_id": "",  # will be filled from fingerprint
         "name": name,
         "short_description": f"{product} | {species} | {sample_type}".strip(" |"),
-        "primary_source_type": "url" if primary_source.startswith("http") else ("doi" if primary_source.startswith("doi:") else ""),
+        "primary_source_type": ("url" if primary_source.startswith("http") else ("doi" if primary_source.startswith("doi:") else "")),
         "primary_source": primary_source,
-        "primary_fingerprint": "",  # filled by ensure_fingerprints_row
-        "all_sources": primary_source,
-        "fingerprints": "",  # filled by ensure_fingerprints_row
+        "primary_fingerprint": "",  # will be set below
         "doi": "",
         "pmid": "",
         "manufacturer": "10x Genomics",
         "product": product,
-        "version": "",
         "release_date": "",
         "tags": ",".join([x for x in [species, sample_type] if x]),
-        "curator": "10x-scrape",
-        "created_at": "",
-        "updated_at": "",
+        "curator": "[@timtreis](https://github.com/timtreis)",
+        "last_updated": date.today().isoformat(),
         "notes": "",
     }
-    row = ensure_fingerprints_row(row)
-    if not row.get("dataset_id") and row.get("primary_fingerprint"):
-        row["dataset_id"] = f"ds_{row['primary_fingerprint']}"
+    primary_c = primary_source
+    if primary_c:
+        row["primary_fingerprint"] = fingerprint(primary_c)
+        if not row.get("dataset_id"):
+            row["dataset_id"] = f"ds_{row['primary_fingerprint']}"
     return row
 
 
@@ -65,7 +64,21 @@ def transform(input_csv: str, output_csv: str) -> None:
 
     # Write
     fieldnames = [
-        "dataset_id","name","short_description","primary_source_type","primary_source","primary_fingerprint","all_sources","fingerprints","doi","pmid","manufacturer","product","version","release_date","tags","curator","created_at","updated_at","notes"
+        "dataset_id",
+        "name",
+        "short_description",
+        "primary_source_type",
+        "primary_source",
+        "primary_fingerprint",
+        "doi",
+        "pmid",
+        "manufacturer",
+        "product",
+        "release_date",
+        "tags",
+        "curator",
+        "last_updated",
+        "notes",
     ]
     with open(output_csv, "w", newline="", encoding="utf-8") as f:
         w = csv.DictWriter(f, fieldnames=fieldnames)
