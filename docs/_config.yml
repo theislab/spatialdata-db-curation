@@ -1,7 +1,8 @@
-theme: minima
+remote_theme: jekyll/minima@3.0
 minima:
-  skin: auto
+  skin: dark
 title: SpatialData-DB Curation
 description: Registry viewer and submission tools for SpatialData-DB
-plugins: []
+plugins:
+  - jekyll-remote-theme
 
