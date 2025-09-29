@@ -1,6 +1,6 @@
 theme: minima
 minima:
-  skin: dark
+  skin: auto
 title: SpatialData-DB Curation
 description: Registry viewer and submission tools for SpatialData-DB
 plugins: []

@@ -18,6 +18,7 @@ title: SpatialData-DB Curation
       .controls { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
       .muted { color: #6b7280; font-size: 12px; }
       .pill { display: inline-block; padding: 2px 6px; border: 1px solid #e5e7eb; border-radius: 999px; margin-right: 4px; font-size: 11px; }
+      td, th { text-align: left; }
       .rowcount { margin-left: auto; }
     </style>
 
@@ -32,12 +33,13 @@ title: SpatialData-DB Curation
       <table id="tbl">
         <thead>
           <tr>
-            <th>ID</th>
+            <th>Status</th>
             <th>Name</th>
-            <th>Primary source</th>
             <th>Manufacturer</th>
+            <th>Product</th>
             <th>Tags</th>
-            <th>Notes</th>
+            <th>Primary source</th>
+            <th>Lamin link</th>
           </tr>
         </thead>
         <tbody></tbody>
@@ -114,17 +116,23 @@ title: SpatialData-DB Curation
         const q = Q.value.trim().toLowerCase();
         for (const r of data) {
           const hay = (
-            text(r.name) + " " + text(r.manufacturer) + " " + text(r.tags) + " " + text(r.notes)
+            text(r.name) + " " + text(r.manufacturer) + " " + text(r.product) + " " + text(r.tags) + " " + text(r.primary_source) + " " + text(r.lamin_link)
           ).toLowerCase();
           if (q && !hay.includes(q)) continue;
           const tr = document.createElement("tr");
+          const tagsHtml = text(r.tags).split(",").filter(Boolean).map(t => `<span class="pill">${t.trim()}</span>`).join(" ");
+          const src = text(r.primary_source);
+          const srcHtml = src ? `<a href="${src}" target="_blank" rel="noopener">${src}</a>` : "";
+          const lamin = text(r.lamin_link);
+          const laminHtml = lamin ? `<a href="${lamin}" target="_blank" rel="noopener">${lamin}</a>` : "";
           tr.innerHTML = `
-            <td><code>${text(r.dataset_id)}</code></td>
+            <td>${text(r.status)}</td>
             <td>${text(r.name)}</td>
-            <td><a href="${text(r.primary_source)}" target="_blank" rel="noopener">${text(r.primary_source)}</a></td>
             <td>${text(r.manufacturer)}</td>
-            <td>${text(r.tags).split(",").filter(Boolean).map(t => `<span class="pill">${t.trim()}</span>`).join(" ")}</td>
-            <td>${text(r.notes)}</td>
+            <td>${text(r.product)}</td>
+            <td>${tagsHtml}</td>
+            <td>${srcHtml}</td>
+            <td>${laminHtml}</td>
           `;
           TBL.appendChild(tr);
           shown += 1;
@@ -135,12 +143,11 @@ title: SpatialData-DB Curation
       function buildFingerprintIndex(data) {
         fpIndex = new Map();
         for (const r of data) {
-          const fps = text(r.fingerprints).split("|").map(s => s.trim()).filter(Boolean);
-          if (text(r.primary_fingerprint)) fps.push(text(r.primary_fingerprint));
+          const pf = text(r.primary_fingerprint);
           const dsid = text(r.dataset_id);
-          for (const fp of fps) {
-            if (!fpIndex.has(fp)) fpIndex.set(fp, new Set());
-            fpIndex.get(fp).add(dsid);
+          if (pf) {
+            if (!fpIndex.has(pf)) fpIndex.set(pf, new Set());
+            fpIndex.get(pf).add(dsid);
           }
         }
       }

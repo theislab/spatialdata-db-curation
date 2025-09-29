@@ -86,12 +86,13 @@ def is_doi_or_url(s: str) -> bool:
 
 
 def canonical_source(raw: str) -> str | None:
-    d = canonicalize_doi(raw)
-    if d is not None:
-        return f"doi:{d}"
+    # Prefer URL normalization; only treat as DOI if it is not a URL and looks like a DOI
     u = canonicalize_url(raw)
     if u is not None:
         return u
+    d = canonicalize_doi(raw)
+    if d is not None:
+        return f"doi:{d}"
     return None
 
 
