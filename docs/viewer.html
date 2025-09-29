@@ -169,7 +169,7 @@
     }
 
     async function loadCsv() {
-      const res = await fetch("../registry/datasets.csv", { cache: "no-store" });
+      const res = await fetch("https://raw.githubusercontent.com/theislab/spatialdata-db-curation/main/registry/datasets.csv", { cache: "no-store" });
       const csvText = await res.text();
       const parsed = Papa.parse(csvText, { header: true, skipEmptyLines: true });
       rows = parsed.data;
@@ -185,3 +185,5 @@
   </script>
 </body>
 </html>
+
+
