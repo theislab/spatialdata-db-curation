@@ -1,2 +1,8 @@
-/* Keep empty or add minimal tweaks that won't override Minima skins */
+/* Expand main content to full-browser width while keeping some padding */
+.page-content > .wrapper {
+  max-width: none;
+  width: 100%;
+  padding-left: 24px;
+  padding-right: 24px;
+}
 
