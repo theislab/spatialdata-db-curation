@@ -1,2 +1,25 @@
-/* Optional small tweaks; keep empty or add overrides here */
+/* Force dark-like appearance on Minima 2.x */
+:root {
+  --text-color: #e5e7eb;
+  --background-color: #0b0f14;
+  --link-base-color: #60a5fa;
+  --link-visited-color: #a78bfa;
+  --link-hover-color: #93c5fd;
+  --brand-color: #93c5fd;
+  --table-border-color: #1f2937;
+}
+
+body {
+  background: var(--background-color);
+  color: var(--text-color);
+}
+
+a { color: var(--link-base-color); }
+a:visited { color: var(--link-visited-color); }
+a:hover { color: var(--link-hover-color); }
+
+table th, table td { border-bottom-color: var(--table-border-color); }
+
+/* Adjust code blocks if any */
+pre, code { background: #0f172a; color: #e2e8f0; }
 
