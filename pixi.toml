@@ -1,0 +1,12 @@
+[workspace]
+authors = ["Tim Treis <tim.treis@stud.uni-heidelberg.de>"]
+channels = ["conda-forge"]
+name = "spatialdata-db-curation"
+platforms = ["osx-arm64"]
+version = "0.1.0"
+
+[tasks]
+
+[dependencies]
+pandas = ">=2.3.2,<3"
+ipykernel = ">=6.30.1,<7"
