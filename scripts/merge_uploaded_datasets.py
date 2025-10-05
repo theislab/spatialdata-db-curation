@@ -8,9 +8,8 @@ uploaded_datasets = pd.read_csv("uploaded_datasets.csv")
 # datasets_registry = pd.merge(datasets_registry, on_cluster, left_on="primary_source", right_on="dataset_link", how="left")
 merged_datasets = pd.merge(datasets_registry, uploaded_datasets, left_on="primary_source", right_on="Dataset Url", how="left")
 
-columns_to_keep = list(dict.fromkeys(datasets_registry.columns.tolist() + ["local_uid", "lamin_link","created_at","description","Replicate", "Software"]))
+columns_to_keep = list(dict.fromkeys(datasets_registry.columns.tolist() + ["local_uid", "lamin_link","created_at","description","Replicate"]))
 merged_datasets = merged_datasets[columns_to_keep]
-merged_datasets.drop(columns=['software_name', 'software_version'], inplace=True)
 
 # Filter to keep only first version of each artifact
 lamin_ends_with_0000 = merged_datasets["lamin_link"].notna() & (merged_datasets["lamin_link"].astype(str).str.endswith("0000"))

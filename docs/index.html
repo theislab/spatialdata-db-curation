@@ -22,7 +22,7 @@ title: SpatialData-DB Curation
 
     <div>
       <div class="controls">
-        <input id="q" type="text" placeholder="Filter by text (name, manufacturer, tags, notes)" size="40" />
+        <input id="q" type="text" placeholder="Filter by text (name, description, manufacturer, tags, notes)" size="40" />
         <input id="src" type="text" placeholder="Paste DOI or URL to check" size="40" />
         <button id="check">Check</button>
         <span class="rowcount muted" id="rowcount"></span>
@@ -33,17 +33,27 @@ title: SpatialData-DB Curation
           <tr>
             <th>Status</th>
             <th>Name</th>
+            <th>Short Description</th>
             <th>Manufacturer</th>
             <th>Product</th>
+            <th>DOI</th>
+            <th>PMID</th>
+            <th>Release Date</th>
             <th>Tags</th>
             <th>Primary source</th>
+            <th>Local UID</th>
             <th>Lamin link</th>
+            <th>Created At</th>
+            <th>Description</th>
+            <th>Replicate</th>
+            <th>Software Name</th>
+            <th>Software Version</th>
           </tr>
         </thead>
         <tbody></tbody>
       </table>
 
-      <p class="muted">Data source: <code>registry/datasets.csv</code>. To add new datasets, open a PR or use the repo template.</p>
+      <p class="muted">Data source: <code>../registry/datasets.csv</code>. To add new datasets, open a PR or use the repo template.</p>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
@@ -114,23 +124,37 @@ title: SpatialData-DB Curation
         const q = Q.value.trim().toLowerCase();
         for (const r of data) {
           const hay = (
-            text(r.name) + " " + text(r.manufacturer) + " " + text(r.product) + " " + text(r.tags) + " " + text(r.primary_source) + " " + text(r.lamin_link)
+            text(r.name) + " " + text(r.short_description) + " " + text(r.manufacturer) + " " + text(r.product) + " " + text(r.doi) + " " + text(r.pmid) + " " + text(r.tags) + " " + text(r.primary_source) + " " + text(r.local_uid) + " " + text(r.lamin_link) + " " + text(r.description) + " " + text(r.replicate) + " " + text(r.software_name) + " " + text(r.software_version)
           ).toLowerCase();
           if (q && !hay.includes(q)) continue;
           const tr = document.createElement("tr");
           const tagsHtml = text(r.tags).split(",").filter(Boolean).map(t => `<span class="pill">${t.trim()}</span>`).join(" ");
           const src = text(r.primary_source);
           const srcHtml = src ? `<a href="${src}" target="_blank" rel="noopener">${src}</a>` : "";
+          const doi = text(r.doi);
+          const doiHtml = doi ? `<a href="https://doi.org/${doi}" target="_blank" rel="noopener">${doi}</a>` : "";
+          const pmid = text(r.pmid);
+          const pmidHtml = pmid ? `<a href="https://pubmed.ncbi.nlm.nih.gov/${pmid}" target="_blank" rel="noopener">${pmid}</a>` : "";
           const lamin = text(r.lamin_link);
           const laminHtml = lamin ? `<a href="${lamin}" target="_blank" rel="noopener">${lamin}</a>` : "";
           tr.innerHTML = `
             <td>${text(r.status)}</td>
             <td>${text(r.name)}</td>
+            <td>${text(r.short_description)}</td>
             <td>${text(r.manufacturer)}</td>
             <td>${text(r.product)}</td>
+            <td>${doiHtml}</td>
+            <td>${pmidHtml}</td>
+            <td>${text(r.release_date)}</td>
             <td>${tagsHtml}</td>
             <td>${srcHtml}</td>
+            <td>${text(r.local_uid)}</td>
             <td>${laminHtml}</td>
+            <td>${text(r.created_at)}</td>
+            <td>${text(r.description)}</td>
+            <td>${text(r.replicate)}</td>
+            <td>${text(r.software_name)}</td>
+            <td>${text(r.software_version)}</td>
           `;
           TBL.appendChild(tr);
           shown += 1;
