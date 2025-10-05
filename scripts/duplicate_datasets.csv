@@ -1,0 +1,69 @@
+Dataset Url,Replicate,local_uid,Software,lamin_link
+https://10xgenomics.com/datasets/adult-mouse-brain-coronal-section-fresh-frozen-1-standard,Sample 1,10ckr,Space Ranger v2.1.0,C2VMt4jeJgOzqGlB0000
+https://10xgenomics.com/datasets/adult-mouse-brain-coronal-section-fresh-frozen-1-standard,Sample 2,10w6u,Space Ranger v2.1.0,7NuCvtep7c7GHlSS0000
+https://10xgenomics.com/datasets/ffpe-human-breast-using-the-entire-sample-area-1-standard,Replicate 2,10xay,Xenium Onboard Analysis v1.0.2,T487SAgKYyOrMyV60000
+https://10xgenomics.com/datasets/ffpe-human-breast-using-the-entire-sample-area-1-standard,Replicate 1,101tu,Xenium Onboard Analysis v1.0.2,zajoOzpDkgbj7iQJ0000
+https://10xgenomics.com/datasets/ffpe-human-breast-with-custom-add-on-panel-1-standard,"Tissue sample 2, Custom Panel",10pf0,Xenium Onboard Analysis v1.0.2,Uj7J4jjgzHw0lcm80000
+https://10xgenomics.com/datasets/ffpe-human-breast-with-custom-add-on-panel-1-standard,"Tissue sample 2, Custom Panel",10pf0,Xenium Onboard Analysis v1.0.2,Uj7J4jjgzHw0lcm80001
+https://10xgenomics.com/datasets/ffpe-human-breast-with-custom-add-on-panel-1-standard,"Tissue sample 1, Custom Panel",101x5,Xenium Onboard Analysis v1.0.2,1lNcghy5uvSIIj1X0000
+https://10xgenomics.com/datasets/ffpe-human-breast-with-custom-add-on-panel-1-standard,"Tissue sample 1, Custom Panel",101x5,Xenium Onboard Analysis v1.0.2,1lNcghy5uvSIIj1X0001
+https://10xgenomics.com/datasets/fresh-frozen-mouse-brain-for-xenium-explorer-demo-1-standard,Tiny subset,104cz,Xenium Onboard Analysis v1.0.2,ESKVT21S8DJa2Edm0000
+https://10xgenomics.com/datasets/fresh-frozen-mouse-brain-for-xenium-explorer-demo-1-standard,Full coronal section,10y80,Xenium Onboard Analysis v1.0.2,XfxFFvRbWX0pkwxQ0000
+https://10xgenomics.com/datasets/fresh-frozen-mouse-brain-replicates-1-standard,Replicate 3,108h0,Xenium Onboard Analysis v1.0.2,URTWN6lHhU092S8N0000
+https://10xgenomics.com/datasets/fresh-frozen-mouse-brain-replicates-1-standard,Replicate 2,10c6u,Xenium Onboard Analysis v1.0.2,itocrVLFWg5Rz08t0000
+https://10xgenomics.com/datasets/fresh-frozen-mouse-brain-replicates-1-standard,Replicate 1,10x88,Xenium Onboard Analysis v1.0.2,hMhdL5in9tFAKkjF0000
+https://10xgenomics.com/datasets/human-bone-and-bone-marrow-data-with-custom-add-on-panel-1-standard,Non-diseased Femur Bone,10pui,Xenium Onboard Analysis v1.9.0,TiO5kXpiBniJVXbV0000
+https://10xgenomics.com/datasets/human-bone-and-bone-marrow-data-with-custom-add-on-panel-1-standard,Acute Lymphoid Leukemia Bone Marrow,10nsr,Xenium Onboard Analysis v1.9.0,oPYUdIk59AnHiaqx0000
+https://10xgenomics.com/datasets/human-bone-and-bone-marrow-data-with-custom-add-on-panel-1-standard,Non-diseased Bone Marrow,10040,Xenium Onboard Analysis v1.9.0,Z3H5fWzBUOkBWi3p0000
+https://10xgenomics.com/datasets/human-colon-preview-data-xenium-human-colon-gene-expression-panel-1-standard,"Non-Diseased, Pre-Designed + Add-On Panel",101t3,Xenium Onboard Analysis v1.6.0,rshDUOAtxBjXtIww0000
+https://10xgenomics.com/datasets/human-colon-preview-data-xenium-human-colon-gene-expression-panel-1-standard,"Non-Diseased, Pre-Designed Panel",10tsy,Xenium Onboard Analysis v1.6.0,N501jLiqKaHUV1rT0000
+https://10xgenomics.com/datasets/human-colon-preview-data-xenium-human-colon-gene-expression-panel-1-standard,"Cancer, Pre-Designed + Add-On Panel",10zm9,Xenium Onboard Analysis v1.6.0,rCFAhy5ZgSSLzxxk0000
+https://10xgenomics.com/datasets/human-colon-preview-data-xenium-human-colon-gene-expression-panel-1-standard,"Cancer, Pre-Designed Panel",10ah4,Xenium Onboard Analysis v1.6.0,Xe4NQX8Y1zB9q8PF0000
+https://10xgenomics.com/datasets/human-heart-1-standard-1-1-0,Space Ranger v1.1.0,,Space Ranger v1.1.0,
+https://10xgenomics.com/datasets/human-heart-1-standard-1-1-0,Space Ranger v1.0.0,,Space Ranger v1.0.0,
+https://10xgenomics.com/datasets/human-kidney-preview-data-xenium-human-multi-tissue-and-cancer-panel-1-standard,Non-diseased Kidney,1063i,Xenium Onboard Analysis v1.5.0,RAPhKiDUPkeCBRY50000
+https://10xgenomics.com/datasets/human-kidney-preview-data-xenium-human-multi-tissue-and-cancer-panel-1-standard,Kidney Cancer (PRCC),10u89,Xenium Onboard Analysis v1.5.0,SfFWKH8X1xFx7yH60000
+https://10xgenomics.com/datasets/human-liver-data-xenium-human-multi-tissue-and-cancer-panel-1-standard,Liver cancer,108dr,Xenium Onboard Analysis v1.9.0,L4mUB32SlQgj3NTH0000
+https://10xgenomics.com/datasets/human-liver-data-xenium-human-multi-tissue-and-cancer-panel-1-standard,Non-diseased,1074f,Xenium Onboard Analysis v1.9.0,yudYDdpcEZq7znND0000
+https://10xgenomics.com/datasets/human-lymph-node-1-standard-1-1-0,Space Ranger v1.1.0,105jc,Space Ranger v1.1.0,MpjyX2eJSHbXlaby0000
+https://10xgenomics.com/datasets/human-lymph-node-1-standard-1-1-0,Space Ranger v1.0.0,105vj,Space Ranger v1.0.0,zRixokXj6yWBdXPK0000
+https://10xgenomics.com/datasets/human-skin-data-xenium-human-multi-tissue-and-cancer-panel-1-standard,Sample 2,10ae2,Xenium Onboard Analysis v1.9.0,Km8Bm11a9zEpGm980000
+https://10xgenomics.com/datasets/human-skin-data-xenium-human-multi-tissue-and-cancer-panel-1-standard,Sample 1,10k3x,Xenium Onboard Analysis v1.9.0,HSAUfmqneqWcvEGv0000
+https://10xgenomics.com/datasets/human-tonsil-data-xenium-human-multi-tissue-and-cancer-panel-1-standard,Reactive follicular hyperplasia,10arp,Xenium Onboard Analysis v1.9.0,gdlpqkSFDi5iFYOK0000
+https://10xgenomics.com/datasets/human-tonsil-data-xenium-human-multi-tissue-and-cancer-panel-1-standard,Follicular lymphoid hyperplasia,1020d,Xenium Onboard Analysis v1.9.0,hHFxUj3LQZiG8bC30000
+https://10xgenomics.com/datasets/mouse-bone-data-with-custom-add-on-panel-1-standard,0.5M EDTA decalcification,10n1k,Xenium Onboard Analysis v1.9.0,0W4MBvLWKZXauWhZ0000
+https://10xgenomics.com/datasets/mouse-bone-data-with-custom-add-on-panel-1-standard,15% EDTA/0.4% PFA decalcification,10ndm,Xenium Onboard Analysis v1.9.0,QYgHYB959TrgV4gk0000
+https://10xgenomics.com/datasets/mouse-bone-data-with-custom-add-on-panel-1-standard,10% Formic acid decalcification,106xa,Xenium Onboard Analysis v1.9.0,wR1LpVQe0chrwCe90000
+https://10xgenomics.com/datasets/mouse-brain-section-coronal-1-standard-1-1-0,Space Ranger v1.0.0,10jft,Space Ranger v1.0.0,bvN4nsnkZwYC8lDJ0000
+https://10xgenomics.com/datasets/mouse-brain-section-coronal-1-standard-1-1-0,Space Ranger v1.1.0,107rw,Space Ranger v1.1.0,0IgXK4yqZbKv1beo0000
+https://10xgenomics.com/datasets/mouse-brain-section-coronal-1-standard-1-1-0,Space Ranger v1.1.3,10ktp,Space Ranger v1.1.3,7xujzwU5XYxe7Ten0000
+https://10xgenomics.com/datasets/mouse-tissue-microarray-in-3x3-layout-with-2-mm-edge-to-edge-spacing-ffpe-2-standard,Lung Replicate 5,102hp,Space Ranger v2.0.1,t3xL68PKhvAraXOy0000
+https://10xgenomics.com/datasets/mouse-tissue-microarray-in-3x3-layout-with-2-mm-edge-to-edge-spacing-ffpe-2-standard,Lung Replicate 4,1090h,Space Ranger v2.0.1,cdJ4ig3BNiTZMC3T0000
+https://10xgenomics.com/datasets/mouse-tissue-microarray-in-3x3-layout-with-2-mm-edge-to-edge-spacing-ffpe-2-standard,Lung Replicate 3,10yhv,Space Ranger v2.0.1,gtLUT2zUAH9l9Uzi0000
+https://10xgenomics.com/datasets/mouse-tissue-microarray-in-3x3-layout-with-2-mm-edge-to-edge-spacing-ffpe-2-standard,Brain Replicate 2,10v4k,Space Ranger v2.0.1,RhhdHJJJWiNoTrYB0000
+https://10xgenomics.com/datasets/mouse-tissue-microarray-in-3x3-layout-with-2-mm-edge-to-edge-spacing-ffpe-2-standard,Lung Replicate 1,10v61,Space Ranger v2.0.1,gkFtY6t2JXGpZuwX0000
+https://10xgenomics.com/datasets/mouse-tissue-microarray-in-3x3-layout-with-2-mm-edge-to-edge-spacing-ffpe-2-standard,Brain Replicate 4,10sph,Space Ranger v2.0.1,tu4rSb0hhPTSqbsI0000
+https://10xgenomics.com/datasets/mouse-tissue-microarray-in-3x3-layout-with-2-mm-edge-to-edge-spacing-ffpe-2-standard,Brain Replicate 3,10s8t,Space Ranger v2.0.1,3p1B6zPVF8BEXpH50000
+https://10xgenomics.com/datasets/mouse-tissue-microarray-in-3x3-layout-with-2-mm-edge-to-edge-spacing-ffpe-2-standard,Brain Replicate 1,108ty,Space Ranger v2.0.1,jI21kEOyqcvd9wxx0000
+https://10xgenomics.com/datasets/mouse-tissue-microarray-in-3x3-layout-with-2-mm-edge-to-edge-spacing-ffpe-2-standard,Lung Replicate 2,109pp,Space Ranger v2.0.1,3AA6HiwHiNd9J7YS0000
+https://10xgenomics.com/datasets/visium-cytassist-gene-expression-libraries-of-post-xenium-human-colon-cancer-ffpe-using-the-human-whole-transcriptome-probe-set-2-standard,"Post-Xenium, Replicate 2",10jfe,Space Ranger v2.1.0,4LGaWiMGNdmI79Si0000
+https://10xgenomics.com/datasets/visium-cytassist-gene-expression-libraries-of-post-xenium-human-colon-cancer-ffpe-using-the-human-whole-transcriptome-probe-set-2-standard,"Control, Replicate 1",10e5i,Space Ranger v2.1.0,LEmjbIthI5Ge9P640000
+https://10xgenomics.com/datasets/visium-cytassist-gene-expression-libraries-of-post-xenium-human-colon-cancer-ffpe-using-the-human-whole-transcriptome-probe-set-2-standard,"Control, Replicate 2",1065r,Space Ranger v2.1.0,4gQynuR0sN7FY8zx0000
+https://10xgenomics.com/datasets/visium-cytassist-gene-expression-libraries-of-post-xenium-human-colon-cancer-ffpe-using-the-human-whole-transcriptome-probe-set-2-standard,"Post-Xenium, Replicate 1",10tei,Space Ranger v2.1.0,42r2kWnUjrS5N5j60000
+https://10xgenomics.com/datasets/visium-cytassist-gene-expression-libraries-of-post-xenium-mouse-brain-ff-using-the-mouse-whole-transcriptome-probe-set-2-standard,"Control, Replicate 2",10ha9,Space Ranger v2.1.0,KjyJkF1DjsmcqUV20000
+https://10xgenomics.com/datasets/visium-cytassist-gene-expression-libraries-of-post-xenium-mouse-brain-ff-using-the-mouse-whole-transcriptome-probe-set-2-standard,"Post-Xenium, Replicate 1",10caf,Space Ranger v2.1.0,iKcTpKomkPuE1Zrj0000
+https://10xgenomics.com/datasets/visium-cytassist-gene-expression-libraries-of-post-xenium-mouse-brain-ff-using-the-mouse-whole-transcriptome-probe-set-2-standard,"Post-Xenium, Replicate 2",105k3,Space Ranger v2.1.0,L2mOcUoXkjYM0gJU0000
+https://10xgenomics.com/datasets/visium-cytassist-gene-expression-libraries-of-post-xenium-mouse-brain-ff-using-the-mouse-whole-transcriptome-probe-set-2-standard,"Control, Replicate 1",10ps4,Space Ranger v2.1.0,kxqX8mJjAzJh7RBD0000
+https://10xgenomics.com/datasets/xenium-ffpe-human-breast-with-custom-add-on-panel-1-standard,Donor 2,10uac,Xenium Onboard Analysis v1.3.0,0LU965immrxZwNp70001
+https://10xgenomics.com/datasets/xenium-ffpe-human-breast-with-custom-add-on-panel-1-standard,Donor 2,10uac,Xenium Onboard Analysis v1.3.0,0LU965immrxZwNp70000
+https://10xgenomics.com/datasets/xenium-human-brain-preview-data-1-standard,Healthy Brain,,Xenium Onboard Analysis v1.3.0,
+https://10xgenomics.com/datasets/xenium-human-brain-preview-data-1-standard,Glioblastoma,,Xenium Onboard Analysis v1.3.0,
+https://10xgenomics.com/datasets/xenium-human-brain-preview-data-1-standard,Alzheimer's,,Xenium Onboard Analysis v1.3.0,
+https://10xgenomics.com/datasets/xenium-human-lung-preview-data-1-standard,Lung Cancer,109k1,Xenium Onboard Analysis v1.3.0,6hNpuo8as4YTeuir0000
+https://10xgenomics.com/datasets/xenium-human-lung-preview-data-1-standard,Non-diseased Lung,10fri,Xenium Onboard Analysis v1.3.0,OJh6O09BO0KvcaqQ0000
+https://10xgenomics.com/datasets/xenium-in-situ-analysis-of-alzheimers-disease-mouse-model-brain-coronal-sections-from-one-hemisphere-over-a-time-course-1-standard,Wild type 13.4 months,106ws,Xenium Onboard Analysis v1.4.0,eaCWUAfpiX2EWscE0000
+https://10xgenomics.com/datasets/xenium-in-situ-analysis-of-alzheimers-disease-mouse-model-brain-coronal-sections-from-one-hemisphere-over-a-time-course-1-standard,Wild type 2.5 months,10xa2,Xenium Onboard Analysis v1.4.0,jmESliF63IWNuHVP0000
+https://10xgenomics.com/datasets/xenium-in-situ-analysis-of-alzheimers-disease-mouse-model-brain-coronal-sections-from-one-hemisphere-over-a-time-course-1-standard,TgCRND8 5.7 months,10fpp,Xenium Onboard Analysis v1.4.0,TaVEN66Q779WeVuv0000
+https://10xgenomics.com/datasets/xenium-in-situ-analysis-of-alzheimers-disease-mouse-model-brain-coronal-sections-from-one-hemisphere-over-a-time-course-1-standard,TgCRND8 2.5 months,10kyp,Xenium Onboard Analysis v1.4.0,zyHhX1mjsVshg5yT0000
+https://10xgenomics.com/datasets/xenium-in-situ-analysis-of-alzheimers-disease-mouse-model-brain-coronal-sections-from-one-hemisphere-over-a-time-course-1-standard,TgCRND8 17.9 months,10hhx,Xenium Onboard Analysis v1.4.0,KqPzNb6f7clFCLGw0000
+https://10xgenomics.com/datasets/xenium-in-situ-analysis-of-alzheimers-disease-mouse-model-brain-coronal-sections-from-one-hemisphere-over-a-time-course-1-standard,Wild type 5.7 months,108d3,Xenium Onboard Analysis v1.4.0,gIiRO1iRTSbyYa370000
