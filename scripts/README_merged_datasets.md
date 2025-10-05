@@ -12,5 +12,5 @@ python create_merged_datasets.py --save-intermediate
 python create_merged_datasets.py --input my_datasets.csv --output my_merged.csv
 
 # Basic usage - just create the final merged file
-python create_merged_datasets.py --skip-softwar --skip-lamin
+python create_merged_datasets.py --skip-software --skip-lamin
 ```
