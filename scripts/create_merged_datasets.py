@@ -142,7 +142,6 @@ def merge_datasets(registry_df: pd.DataFrame, uploaded_df: pd.DataFrame, save_in
     columns_to_keep = list(dict.fromkeys(registry_clean.columns.tolist() + [
         "local_uid", "lamin_link", "created_at", "description", "Replicate", "Software"
     ]))
-    print(merged_datasets.columns.tolist())
     merged_datasets = merged_datasets[columns_to_keep]
     
     lamin_ends_with_0000 = merged_datasets["lamin_link"].notna() & (
