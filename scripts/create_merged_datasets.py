@@ -113,7 +113,7 @@ def get_uploaded_datasets(save_intermediate: bool = False) -> pd.DataFrame:
     
     result = pd.concat([visium, xenium], axis=0, ignore_index=True)
     result = result.merge(dataset_status, left_on='uid', right_on='local_uid', how='left')
-    result['Dataset Url'] = result['Dataset Url'].apply(lambda x: x.replace('www.', ''))
+    result['Dataset Url'] = result['Dataset Url'].fillna('').astype(str).apply(lambda x: x.replace('www.', ''))
     
     if save_intermediate:
         result.to_csv("uploaded_datasets.csv", index=False)
