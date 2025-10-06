@@ -22,7 +22,7 @@ title: SpatialData-DB Curation
 
     <div>
       <div class="controls">
-        <input id="q" type="text" placeholder="Filter by text (name, manufacturer, tags, notes)" size="40" />
+        <input id="q" type="text" placeholder="Filter by text (name, description, manufacturer, tags, notes)" size="40" />
         <input id="src" type="text" placeholder="Paste DOI or URL to check" size="40" />
         <button id="check">Check</button>
         <span class="rowcount muted" id="rowcount"></span>
@@ -37,7 +37,13 @@ title: SpatialData-DB Curation
             <th>Product</th>
             <th>Tags</th>
             <th>Primary source</th>
+            <th>Local UID</th>
             <th>Lamin link</th>
+            <th>Created At</th>
+            <th>Description</th>
+            <th>Replicate</th>
+            <th>Software Name</th>
+            <th>Software Version</th>
           </tr>
         </thead>
         <tbody></tbody>
@@ -114,7 +120,7 @@ title: SpatialData-DB Curation
         const q = Q.value.trim().toLowerCase();
         for (const r of data) {
           const hay = (
-            text(r.name) + " " + text(r.manufacturer) + " " + text(r.product) + " " + text(r.tags) + " " + text(r.primary_source) + " " + text(r.lamin_link)
+            text(r.name) + " " + text(r.manufacturer) + " " + text(r.product) + " " + text(r.tags) + " " + text(r.primary_source) + " " + text(r.local_uid) + " " + text(r.lamin_link) + " " + text(r.replicate) + " " + text(r.software_name) + " " + text(r.software_version)
           ).toLowerCase();
           if (q && !hay.includes(q)) continue;
           const tr = document.createElement("tr");
@@ -130,7 +136,13 @@ title: SpatialData-DB Curation
             <td>${text(r.product)}</td>
             <td>${tagsHtml}</td>
             <td>${srcHtml}</td>
+            <td>${text(r.local_uid)}</td>
             <td>${laminHtml}</td>
+            <td>${text(r.created_at)}</td>
+            <td>${text(r.description)}</td>
+            <td>${text(r.replicate)}</td>
+            <td>${text(r.software_name)}</td>
+            <td>${text(r.software_version)}</td>
           `;
           TBL.appendChild(tr);
           shown += 1;
