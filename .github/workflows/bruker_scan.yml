@@ -1,0 +1,40 @@
+name: Bruker S3 bucket scan
+
+on:
+  schedule:
+    - cron: '0 6 * * 0'  # Every Sunday at 06:00 UTC
+  workflow_dispatch:       # Manual trigger
+
+jobs:
+  scan-bucket:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Fetch bucket listing
+        run: python tools/fetch_bruker.py registry/bruker_files.txt
+
+      - name: Group into datasets and merge status
+        run: python tools/group_bruker.py registry/bruker_files.txt registry/bruker_datasets.json registry/bruker_status.csv
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add registry/bruker_files.txt registry/bruker_datasets.json registry/bruker_status.csv
+          if ! git diff --cached --quiet; then
+            git pull --rebase
+            git commit -m "chore: update Bruker bucket listing"
+            git push
+          else
+            echo "No changes to commit."
+          fi

@@ -1,0 +1,187 @@
+---
+layout: base
+title: Bruker Data Releases — SpatialData-DB Curation
+---
+
+<main class="page-content" aria-label="Content">
+  <div class="wrapper">
+    <nav class="site-tabs">
+      <a href="{{ '/' | relative_url }}" class="tab-link">Dataset Registry</a>
+      <a href="{{ '/bruker' | relative_url }}" class="tab-link active">Bruker Data Releases</a>
+    </nav>
+
+    <h1>Bruker Data Releases</h1>
+    <p>Public CosMx SMI datasets from the <a href="https://smi-public.objects.liquidweb.services/" target="_blank" rel="noopener">Bruker SMI S3 bucket</a>. Scanned weekly. Click a row to expand its files.</p>
+
+    <style>
+      input, select { padding: 8px 10px; font-size: 14px; }
+      table { width: 100%; border-collapse: collapse; margin-top: 8px; }
+      th, td { padding: 6px 8px; border-bottom: 1px solid #2a2a2a; text-align: left; font-size: 12px; }
+      th { font-size: 11px; color: #888; text-transform: uppercase; letter-spacing: 0.04em; }
+      tr:last-child td { border-bottom: none; }
+      .controls { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; margin-bottom: 16px; }
+      .muted { color: #6b7280; font-size: 12px; }
+      .rowcount { margin-left: auto; }
+      .hidden { display: none !important; }
+      a { color: #58a6ff; }
+    </style>
+
+    <div class="controls">
+      <input id="q" type="text" placeholder="Filter groups and files..." size="40" />
+      <span class="rowcount muted" id="info"></span>
+    </div>
+
+    <div id="groups"></div>
+
+    <p class="muted" id="footer"></p>
+
+    <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+    <script>
+      const RAW = "https://raw.githubusercontent.com/theislab/spatialdata-db-curation/main/";
+      const JSON_URL = RAW + "registry/bruker_datasets.json";
+      const STATUS_URL = RAW + "registry/bruker_status.csv";
+
+      let allGroups = [];
+      let bucketUrl = "https://smi-public.objects.liquidweb.services/";
+      let statusMap = {};
+
+      function formatBytes(bytes) {
+        if (!bytes || bytes === 0) return "0 B";
+        const units = ["B", "KB", "MB", "GB", "TB"];
+        const i = Math.min(Math.floor(Math.log(bytes) / Math.log(1024)), units.length - 1);
+        return (bytes / Math.pow(1024, i)).toFixed(1) + "\u00a0" + units[i];
+      }
+
+      function formatDate(iso) {
+        if (!iso) return "";
+        return iso.slice(0, 10);
+      }
+
+      function statusPills(id) {
+        const s = statusMap[id] || {};
+        let html = "";
+        if (s.downloaded === "yes")               html += '<span class="pill-yes">Downloaded</span> ';
+        if (s.converted_to_spatialdata === "yes") html += '<span class="pill-converted">Converted</span> ';
+        if (s.uploaded_to_lamin === "yes")        html += '<span class="pill-uploaded">Uploaded</span> ';
+        return html;
+      }
+
+      function fileTable(files) {
+        if (!files || files.length === 0) return "";
+        const rows = files.map(f => {
+          const href = bucketUrl + encodeURIComponent(f.key).replace(/%2F/g, "/");
+          return `<tr>
+            <td><a href="${href}" target="_blank" rel="noopener">${escHtml(f.filename)}</a></td>
+            <td>${formatBytes(f.size_bytes)}</td>
+            <td>${formatDate(f.last_modified)}</td>
+          </tr>`;
+        }).join("");
+        return `<table>
+          <thead><tr><th>File</th><th>Size</th><th>Modified</th></tr></thead>
+          <tbody>${rows}</tbody>
+        </table>`;
+      }
+
+      function escHtml(s) {
+        return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
+      }
+
+      function renderSubgroup(sg, q) {
+        const nameMatch = q && sg.display_name.toLowerCase().includes(q);
+        const fileMatch = q && sg.files.some(f => f.filename.toLowerCase().includes(q) || f.key.toLowerCase().includes(q));
+        const show = !q || nameMatch || fileMatch;
+
+        const pills = statusPills(sg.group_id);
+        const meta = `${sg.file_count} file${sg.file_count !== 1 ? "s" : ""} · ${formatBytes(sg.total_size_bytes)}`;
+
+        return `<details class="bruker-subgroup${show ? "" : " hidden"}"${q ? " open" : ""}>
+          <summary>
+            <strong>${escHtml(sg.display_name)}</strong>
+            <span class="group-meta">${meta}</span>
+            ${pills}
+          </summary>
+          <div class="bruker-subgroup-body">
+            ${fileTable(sg.files)}
+          </div>
+        </details>`;
+      }
+
+      function renderGroup(g, q) {
+        const nameMatch = q && g.display_name.toLowerCase().includes(q);
+        const fileMatch = q && g.files.some(f => f.filename.toLowerCase().includes(q) || f.key.toLowerCase().includes(q));
+        const subMatch = q && g.subgroups && g.subgroups.some(sg =>
+          sg.display_name.toLowerCase().includes(q) ||
+          sg.files.some(f => f.filename.toLowerCase().includes(q) || f.key.toLowerCase().includes(q))
+        );
+        if (!q || nameMatch || fileMatch || subMatch) {
+          // show
+        } else {
+          return "";
+        }
+
+        const pills = statusPills(g.group_id);
+        let totalSize = g.total_size_bytes;
+        let totalFiles = g.file_count;
+        for (const sg of g.subgroups || []) {
+          totalSize += sg.total_size_bytes;
+          totalFiles += sg.file_count;
+        }
+        const meta = `${totalFiles} file${totalFiles !== 1 ? "s" : ""} · ${formatBytes(totalSize)}`;
+
+        const subgroupsHtml = (g.subgroups || []).map(sg => renderSubgroup(sg, q)).join("");
+
+        return `<details class="bruker-group"${q ? " open" : ""}>
+          <summary>
+            <strong>${escHtml(g.display_name)}</strong>
+            <span class="group-meta">${meta}</span>
+            ${pills}
+          </summary>
+          <div class="bruker-group-body">
+            ${fileTable(g.files)}
+            ${subgroupsHtml}
+          </div>
+        </details>`;
+      }
+
+      function render(q) {
+        const container = document.getElementById("groups");
+        const lq = q ? q.trim().toLowerCase() : "";
+        let shown = 0;
+        const rendered = allGroups.map(g => {
+          const groupHtml = renderGroup(g, lq);
+          if (groupHtml) shown++;
+          return groupHtml;
+        }).join("");
+        container.innerHTML = rendered;
+        document.getElementById("info").textContent = `${shown} of ${allGroups.length} groups`;
+      }
+
+      async function load() {
+        const [jsonResp, statusResp] = await Promise.all([
+          fetch(JSON_URL, { cache: "no-store" }),
+          fetch(STATUS_URL, { cache: "no-store" }),
+        ]);
+
+        const data = await jsonResp.json();
+        allGroups = data.groups || [];
+        bucketUrl = data.bucket_url || bucketUrl;
+
+        const statusText = await statusResp.text();
+        const parsed = Papa.parse(statusText, { header: true, skipEmptyLines: true });
+        statusMap = {};
+        for (const row of parsed.data) {
+          if (row.dataset_id) statusMap[row.dataset_id] = row;
+        }
+
+        document.getElementById("footer").innerHTML =
+          `Data source: <code>registry/bruker_datasets.json</code> · Status: <code>registry/bruker_status.csv</code> · ` +
+          `Last scanned: ${data.last_updated ? data.last_updated.slice(0, 10) : "unknown"}`;
+
+        render("");
+      }
+
+      document.getElementById("q").addEventListener("input", e => render(e.target.value));
+      load();
+    </script>
+  </div>
+</main>

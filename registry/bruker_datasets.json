@@ -1,0 +1,1002 @@
+{
+  "last_updated": "2026-03-26T16:31:03Z",
+  "bucket_url": "https://smi-public.objects.liquidweb.services/",
+  "groups": [
+    {
+      "group_id": "6k_release",
+      "display_name": "6k Release",
+      "total_size_bytes": 654288138173,
+      "file_count": 5,
+      "latest_modified": "2023-09-20T20:57:09.382Z",
+      "files": [
+        {
+          "key": "6k_release/RawFiles.zip",
+          "filename": "RawFiles.zip",
+          "size_bytes": 646481058997,
+          "last_modified": "2023-09-06T15:29:54.561Z"
+        },
+        {
+          "key": "6k_release/SeuratObj.RDS",
+          "filename": "SeuratObj.RDS",
+          "size_bytes": 1038066783,
+          "last_modified": "2023-09-06T15:30:19.429Z"
+        },
+        {
+          "key": "6k_release/SeuratObj_withTranscripts.RDS",
+          "filename": "SeuratObj_withTranscripts.RDS",
+          "size_bytes": 2390490614,
+          "last_modified": "2023-09-06T15:30:45.303Z"
+        },
+        {
+          "key": "6k_release/TileDB.zip",
+          "filename": "TileDB.zip",
+          "size_bytes": 2277563682,
+          "last_modified": "2023-09-06T15:31:01.872Z"
+        },
+        {
+          "key": "6k_release/flatFiles.zip",
+          "filename": "flatFiles.zip",
+          "size_bytes": 2100958097,
+          "last_modified": "2023-09-20T20:57:09.382Z"
+        }
+      ],
+      "subgroups": null
+    },
+    {
+      "group_id": "LN28_6k",
+      "display_name": "LN28 6k",
+      "total_size_bytes": 112894010799,
+      "file_count": 3,
+      "latest_modified": "2024-11-15T03:47:55.986Z",
+      "files": [
+        {
+          "key": "LN28_6k/flat_files.zip",
+          "filename": "flat_files.zip",
+          "size_bytes": 35037939221,
+          "last_modified": "2024-11-15T03:47:23.520Z"
+        },
+        {
+          "key": "LN28_6k/napari.zip",
+          "filename": "napari.zip",
+          "size_bytes": 73978984592,
+          "last_modified": "2024-11-15T03:47:37.208Z"
+        },
+        {
+          "key": "LN28_6k/seurat.zip",
+          "filename": "seurat.zip",
+          "size_bytes": 3877086986,
+          "last_modified": "2024-11-15T03:47:55.986Z"
+        }
+      ],
+      "subgroups": null
+    },
+    {
+      "group_id": "brain",
+      "display_name": "Brain",
+      "total_size_bytes": 315473948121,
+      "file_count": 10,
+      "latest_modified": "2023-08-14T16:33:00.886Z",
+      "files": [
+        {
+          "key": "Brain_1000.zip",
+          "filename": "Brain_1000.zip",
+          "size_bytes": 19173395125,
+          "last_modified": "2023-06-02T14:06:34.150Z"
+        },
+        {
+          "key": "Brain_5642.zip",
+          "filename": "Brain_5642.zip",
+          "size_bytes": 22339889243,
+          "last_modified": "2023-06-02T14:06:48.734Z"
+        },
+        {
+          "key": "Half  Brain simple  files .zip",
+          "filename": "Half  Brain simple  files .zip",
+          "size_bytes": 1905725181,
+          "last_modified": "2023-06-27T14:48:31.264Z"
+        },
+        {
+          "key": "HalfBrain.zip",
+          "filename": "HalfBrain.zip",
+          "size_bytes": 187669668784,
+          "last_modified": "2023-06-27T14:48:21.944Z"
+        },
+        {
+          "key": "Quarter Brain simple  files .zip",
+          "filename": "Quarter Brain simple  files .zip",
+          "size_bytes": 1880005722,
+          "last_modified": "2023-06-27T14:48:09.526Z"
+        },
+        {
+          "key": "Quarter Brain.zip",
+          "filename": "Quarter Brain.zip",
+          "size_bytes": 1775033064,
+          "last_modified": "2023-07-22T02:22:08.556Z"
+        },
+        {
+          "key": "QuarterBrain.zip",
+          "filename": "QuarterBrain.zip",
+          "size_bytes": 76022155415,
+          "last_modified": "2023-08-14T16:33:00.886Z"
+        },
+        {
+          "key": "brainDataRelease_nanopipeline_final.zip",
+          "filename": "brainDataRelease_nanopipeline_final.zip",
+          "size_bytes": 2668432179,
+          "last_modified": "2023-06-26T20:47:01.093Z"
+        },
+        {
+          "key": "brainRelease_seurat.RDS",
+          "filename": "brainRelease_seurat.RDS",
+          "size_bytes": 1831511547,
+          "last_modified": "2023-06-26T20:47:13.728Z"
+        },
+        {
+          "key": "brainRelease_seurat_noTranscripts.RDS",
+          "filename": "brainRelease_seurat_noTranscripts.RDS",
+          "size_bytes": 208131861,
+          "last_modified": "2023-06-26T20:47:28.643Z"
+        }
+      ],
+      "subgroups": null
+    },
+    {
+      "group_id": "cosmx-wtx",
+      "display_name": "Cosmx Wtx",
+      "total_size_bytes": 1555881065,
+      "file_count": 3,
+      "latest_modified": "2024-01-05T05:27:52.147Z",
+      "files": [
+        {
+          "key": "cosmx-wtx/Pancreas-CosMx-ReadMe.html",
+          "filename": "Pancreas-CosMx-ReadMe.html",
+          "size_bytes": 2865978,
+          "last_modified": "2024-01-05T05:27:34.230Z"
+        },
+        {
+          "key": "cosmx-wtx/Pancreas-CosMx-WTx-FlatFiles.zip",
+          "filename": "Pancreas-CosMx-WTx-FlatFiles.zip",
+          "size_bytes": 1066843943,
+          "last_modified": "2024-01-05T05:27:42.540Z"
+        },
+        {
+          "key": "cosmx-wtx/Seurat_Pancreas_withTranscripts.rds",
+          "filename": "Seurat_Pancreas_withTranscripts.rds",
+          "size_bytes": 486171144,
+          "last_modified": "2024-01-05T05:27:52.147Z"
+        }
+      ],
+      "subgroups": null
+    },
+    {
+      "group_id": "cosmx_colon_pdr_wtx",
+      "display_name": "Cosmx Colon Pdr Wtx",
+      "total_size_bytes": 15233614879,
+      "file_count": 7,
+      "latest_modified": "2025-07-21T17:42:28.462Z",
+      "files": [
+        {
+          "key": "cosmx_colon_pdr_wtx/ReadMe.html",
+          "filename": "ReadMe.html",
+          "size_bytes": 689282,
+          "last_modified": "2025-07-21T17:42:28.462Z"
+        },
+        {
+          "key": "cosmx_colon_pdr_wtx/S0-polygons.csv.gz",
+          "filename": "S0-polygons.csv.gz",
+          "size_bytes": 95760550,
+          "last_modified": "2025-07-08T20:46:41.757Z"
+        },
+        {
+          "key": "cosmx_colon_pdr_wtx/S0_exprMat_file.csv.gz",
+          "filename": "S0_exprMat_file.csv.gz",
+          "size_bytes": 879595204,
+          "last_modified": "2025-07-08T17:50:53.567Z"
+        },
+        {
+          "key": "cosmx_colon_pdr_wtx/S0_fov_positions_file.csv.gz",
+          "filename": "S0_fov_positions_file.csv.gz",
+          "size_bytes": 4044,
+          "last_modified": "2025-07-08T17:51:02.023Z"
+        },
+        {
+          "key": "cosmx_colon_pdr_wtx/S0_metadata_file.csv.gz",
+          "filename": "S0_metadata_file.csv.gz",
+          "size_bytes": 39073339,
+          "last_modified": "2025-07-08T17:51:02.610Z"
+        },
+        {
+          "key": "cosmx_colon_pdr_wtx/S0_tx_file.csv.gz",
+          "filename": "S0_tx_file.csv.gz",
+          "size_bytes": 11397927299,
+          "last_modified": "2025-07-08T17:51:03.332Z"
+        },
+        {
+          "key": "cosmx_colon_pdr_wtx/sempreqc.RDS",
+          "filename": "sempreqc.RDS",
+          "size_bytes": 2820565161,
+          "last_modified": "2025-07-08T17:51:03.825Z"
+        }
+      ],
+      "subgroups": null
+    },
+    {
+      "group_id": "liver",
+      "display_name": "Liver",
+      "total_size_bytes": 940233344083,
+      "file_count": 5,
+      "latest_modified": "2023-01-14T19:52:30.098Z",
+      "files": [
+        {
+          "key": "LiverCancerFiles.zip",
+          "filename": "LiverCancerFiles.zip",
+          "size_bytes": 501670189717,
+          "last_modified": "2023-01-13T15:30:43.829Z"
+        },
+        {
+          "key": "LiverDataReleaseSeurat_newUMAP.RDS",
+          "filename": "LiverDataReleaseSeurat_newUMAP.RDS",
+          "size_bytes": 21194246494,
+          "last_modified": "2023-01-14T19:52:30.098Z"
+        },
+        {
+          "key": "LiverDataReleaseSeurat_noTranscripts_newUMAP.RDS",
+          "filename": "LiverDataReleaseSeurat_noTranscripts_newUMAP.RDS",
+          "size_bytes": 17783054795,
+          "last_modified": "2023-01-14T19:52:21.117Z"
+        },
+        {
+          "key": "LiverDataReleaseTileDB.zip",
+          "filename": "LiverDataReleaseTileDB.zip",
+          "size_bytes": 24868314417,
+          "last_modified": "2023-01-14T19:52:12.448Z"
+        },
+        {
+          "key": "NormalLiverFiles.zip",
+          "filename": "NormalLiverFiles.zip",
+          "size_bytes": 374717538660,
+          "last_modified": "2023-01-14T19:51:56.150Z"
+        }
+      ],
+      "subgroups": null
+    },
+    {
+      "group_id": "misc",
+      "display_name": "Misc",
+      "total_size_bytes": 214969300,
+      "file_count": 1,
+      "latest_modified": "2023-01-14T19:52:04.998Z",
+      "files": [
+        {
+          "key": "Logs.zip",
+          "filename": "Logs.zip",
+          "size_bytes": 214969300,
+          "last_modified": "2023-01-14T19:52:04.998Z"
+        }
+      ],
+      "subgroups": null
+    },
+    {
+      "group_id": "mouse_brain",
+      "display_name": "Mouse Brain",
+      "total_size_bytes": 4534581609,
+      "file_count": 3,
+      "latest_modified": "2023-07-22T02:23:26.809Z",
+      "files": [
+        {
+          "key": "MuBrainDataRelease.zip",
+          "filename": "MuBrainDataRelease.zip",
+          "size_bytes": 2524904001,
+          "last_modified": "2023-07-22T02:22:34.278Z"
+        },
+        {
+          "key": "muBrainRelease_seurat.RDS",
+          "filename": "muBrainRelease_seurat.RDS",
+          "size_bytes": 1757324659,
+          "last_modified": "2023-07-22T02:23:04.315Z"
+        },
+        {
+          "key": "muBrainRelease_seurat_noTranscripts.RDS",
+          "filename": "muBrainRelease_seurat_noTranscripts.RDS",
+          "size_bytes": 252352949,
+          "last_modified": "2023-07-22T02:23:26.809Z"
+        }
+      ],
+      "subgroups": null
+    },
+    {
+      "group_id": "multiomic_breast",
+      "display_name": "Multiomic Breast",
+      "total_size_bytes": 158093892206,
+      "file_count": 9,
+      "latest_modified": "2025-12-19T17:26:19.780Z",
+      "files": [
+        {
+          "key": "multiomic_breast/AnalysisResults_Protein.zip",
+          "filename": "AnalysisResults_Protein.zip",
+          "size_bytes": 52841756492,
+          "last_modified": "2025-12-11T21:11:25.651Z"
+        },
+        {
+          "key": "multiomic_breast/AnalysisResults_RNA.zip",
+          "filename": "AnalysisResults_RNA.zip",
+          "size_bytes": 29958412738,
+          "last_modified": "2025-12-11T21:11:26.032Z"
+        },
+        {
+          "key": "multiomic_breast/CellStatsDir.zip",
+          "filename": "CellStatsDir.zip",
+          "size_bytes": 18778652949,
+          "last_modified": "2025-12-11T21:11:26.463Z"
+        },
+        {
+          "key": "multiomic_breast/Flatfiles_Protein.zip",
+          "filename": "Flatfiles_Protein.zip",
+          "size_bytes": 70337501,
+          "last_modified": "2025-12-11T21:11:26.860Z"
+        },
+        {
+          "key": "multiomic_breast/Flatfiles_RNA.zip",
+          "filename": "Flatfiles_RNA.zip",
+          "size_bytes": 4102977121,
+          "last_modified": "2025-12-11T21:11:27.323Z"
+        },
+        {
+          "key": "multiomic_breast/ProteinDir.zip",
+          "filename": "ProteinDir.zip",
+          "size_bytes": 52270366665,
+          "last_modified": "2025-12-11T21:11:27.785Z"
+        },
+        {
+          "key": "multiomic_breast/RunSummary.zip",
+          "filename": "RunSummary.zip",
+          "size_bytes": 70649842,
+          "last_modified": "2025-12-11T21:11:28.168Z"
+        },
+        {
+          "key": "multiomic_breast/multiomics_breast_readme.htm",
+          "filename": "multiomics_breast_readme.htm",
+          "size_bytes": 736891,
+          "last_modified": "2025-12-19T17:26:19.780Z"
+        },
+        {
+          "key": "multiomic_breast/plex-7y3yq2rqk9.txt",
+          "filename": "plex-7y3yq2rqk9.txt",
+          "size_bytes": 2007,
+          "last_modified": "2025-12-11T21:11:28.576Z"
+        }
+      ],
+      "subgroups": null
+    },
+    {
+      "group_id": "protein_tonsil_25",
+      "display_name": "Protein Tonsil 25",
+      "total_size_bytes": 1130199980956,
+      "file_count": 6,
+      "latest_modified": "2025-04-07T05:04:25.261Z",
+      "files": [
+        {
+          "key": "protein_tonsil_25/20250124_070958_S3.zip",
+          "filename": "20250124_070958_S3.zip",
+          "size_bytes": 299744200543,
+          "last_modified": "2025-04-07T04:18:21.177Z"
+        },
+        {
+          "key": "protein_tonsil_25/ProteinDir.zip",
+          "filename": "ProteinDir.zip",
+          "size_bytes": 227395295677,
+          "last_modified": "2025-04-07T04:18:10.302Z"
+        },
+        {
+          "key": "protein_tonsil_25/analysis.zip",
+          "filename": "analysis.zip",
+          "size_bytes": 299744200543,
+          "last_modified": "2025-04-07T05:04:19.871Z"
+        },
+        {
+          "key": "protein_tonsil_25/flatfiles.zip",
+          "filename": "flatfiles.zip",
+          "size_bytes": 771671919,
+          "last_modified": "2025-04-07T04:18:09.696Z"
+        },
+        {
+          "key": "protein_tonsil_25/results.zip",
+          "filename": "results.zip",
+          "size_bytes": 299744200543,
+          "last_modified": "2025-04-07T05:04:25.261Z"
+        },
+        {
+          "key": "protein_tonsil_25/seurat_object.RDS",
+          "filename": "seurat_object.RDS",
+          "size_bytes": 2800411731,
+          "last_modified": "2025-04-07T04:18:10.889Z"
+        }
+      ],
+      "subgroups": null
+    },
+    {
+      "group_id": "wtx_manuscript",
+      "display_name": "Wtx Manuscript",
+      "total_size_bytes": 803,
+      "file_count": 1,
+      "latest_modified": "2026-03-04T04:16:40.701Z",
+      "files": [
+        {
+          "key": "wtx_manuscript/index.html",
+          "filename": "index.html",
+          "size_bytes": 803,
+          "last_modified": "2026-03-04T04:16:40.701Z"
+        }
+      ],
+      "subgroups": [
+        {
+          "group_id": "wtx_manuscript/37CPA_rep_1",
+          "display_name": "37CPA Rep 1",
+          "total_size_bytes": 89355281194,
+          "file_count": 9,
+          "latest_modified": "2026-03-19T14:49:55.078Z",
+          "files": [
+            {
+              "key": "wtx_manuscript/37CPA_rep_1/Napari.zip",
+              "filename": "Napari.zip",
+              "size_bytes": 69851255827,
+              "last_modified": "2026-03-03T15:29:58.724Z"
+            },
+            {
+              "key": "wtx_manuscript/37CPA_rep_1/README_37CPArep1.html",
+              "filename": "README_37CPArep1.html",
+              "size_bytes": 692599,
+              "last_modified": "2026-03-03T15:29:59.207Z"
+            },
+            {
+              "key": "wtx_manuscript/37CPA_rep_1/S0-polygons.csv.gz",
+              "filename": "S0-polygons.csv.gz",
+              "size_bytes": 77457220,
+              "last_modified": "2026-03-03T15:30:02.010Z"
+            },
+            {
+              "key": "wtx_manuscript/37CPA_rep_1/S0_exprMat_file.csv.gz",
+              "filename": "S0_exprMat_file.csv.gz",
+              "size_bytes": 1311154443,
+              "last_modified": "2026-03-03T15:30:00.023Z"
+            },
+            {
+              "key": "wtx_manuscript/37CPA_rep_1/S0_fov_positions_file.csv.gz",
+              "filename": "S0_fov_positions_file.csv.gz",
+              "size_bytes": 5331,
+              "last_modified": "2026-03-03T15:30:00.475Z"
+            },
+            {
+              "key": "wtx_manuscript/37CPA_rep_1/S0_metadata_file.csv.gz",
+              "filename": "S0_metadata_file.csv.gz",
+              "size_bytes": 38061103,
+              "last_modified": "2026-03-03T15:30:01.043Z"
+            },
+            {
+              "key": "wtx_manuscript/37CPA_rep_1/S0_tx_file.csv.gz",
+              "filename": "S0_tx_file.csv.gz",
+              "size_bytes": 18076651978,
+              "last_modified": "2026-03-03T15:30:01.553Z"
+            },
+            {
+              "key": "wtx_manuscript/37CPA_rep_1/index_37_cpa_rep_1.html",
+              "filename": "index_37_cpa_rep_1.html",
+              "size_bytes": 2365,
+              "last_modified": "2026-03-19T14:49:55.078Z"
+            },
+            {
+              "key": "wtx_manuscript/37CPA_rep_1/md5sums.txt",
+              "filename": "md5sums.txt",
+              "size_bytes": 328,
+              "last_modified": "2026-03-03T15:29:58.121Z"
+            }
+          ]
+        },
+        {
+          "group_id": "wtx_manuscript/37CPA_rep_2",
+          "display_name": "37CPA Rep 2",
+          "total_size_bytes": 10849957955,
+          "file_count": 9,
+          "latest_modified": "2026-03-19T14:50:39.540Z",
+          "files": [
+            {
+              "key": "wtx_manuscript/37CPA_rep_2/Napari.zip",
+              "filename": "Napari.zip",
+              "size_bytes": 8257635476,
+              "last_modified": "2026-03-03T15:54:17.310Z"
+            },
+            {
+              "key": "wtx_manuscript/37CPA_rep_2/README_37CPArep2.html",
+              "filename": "README_37CPArep2.html",
+              "size_bytes": 692470,
+              "last_modified": "2026-03-03T15:54:17.851Z"
+            },
+            {
+              "key": "wtx_manuscript/37CPA_rep_2/S0-polygons.csv.gz",
+              "filename": "S0-polygons.csv.gz",
+              "size_bytes": 9681370,
+              "last_modified": "2026-03-03T15:54:20.610Z"
+            },
+            {
+              "key": "wtx_manuscript/37CPA_rep_2/S0_exprMat_file.csv.gz",
+              "filename": "S0_exprMat_file.csv.gz",
+              "size_bytes": 178298068,
+              "last_modified": "2026-03-03T15:54:18.370Z"
+            },
+            {
+              "key": "wtx_manuscript/37CPA_rep_2/S0_fov_positions_file.csv.gz",
+              "filename": "S0_fov_positions_file.csv.gz",
+              "size_bytes": 927,
+              "last_modified": "2026-03-03T15:54:18.814Z"
+            },
+            {
+              "key": "wtx_manuscript/37CPA_rep_2/S0_metadata_file.csv.gz",
+              "filename": "S0_metadata_file.csv.gz",
+              "size_bytes": 5149251,
+              "last_modified": "2026-03-03T15:54:19.375Z"
+            },
+            {
+              "key": "wtx_manuscript/37CPA_rep_2/S0_tx_file.csv.gz",
+              "filename": "S0_tx_file.csv.gz",
+              "size_bytes": 2398497701,
+              "last_modified": "2026-03-03T15:54:20.024Z"
+            },
+            {
+              "key": "wtx_manuscript/37CPA_rep_2/index_37_cpa_rep_2.html",
+              "filename": "index_37_cpa_rep_2.html",
+              "size_bytes": 2364,
+              "last_modified": "2026-03-19T14:50:39.540Z"
+            },
+            {
+              "key": "wtx_manuscript/37CPA_rep_2/md5sums.txt",
+              "filename": "md5sums.txt",
+              "size_bytes": 328,
+              "last_modified": "2026-03-03T15:54:16.805Z"
+            }
+          ]
+        },
+        {
+          "group_id": "wtx_manuscript/37CPA_rep_3",
+          "display_name": "37CPA Rep 3",
+          "total_size_bytes": 18996917896,
+          "file_count": 9,
+          "latest_modified": "2026-03-19T14:48:35.619Z",
+          "files": [
+            {
+              "key": "wtx_manuscript/37CPA_rep_3/Napari.zip",
+              "filename": "Napari.zip",
+              "size_bytes": 14767766267,
+              "last_modified": "2026-03-03T16:10:22.962Z"
+            },
+            {
+              "key": "wtx_manuscript/37CPA_rep_3/README_37CPArep3.html",
+              "filename": "README_37CPArep3.html",
+              "size_bytes": 692439,
+              "last_modified": "2026-03-03T16:10:23.405Z"
+            },
+            {
+              "key": "wtx_manuscript/37CPA_rep_3/S0-polygons.csv.gz",
+              "filename": "S0-polygons.csv.gz",
+              "size_bytes": 18612048,
+              "last_modified": "2026-03-03T16:10:25.891Z"
+            },
+            {
+              "key": "wtx_manuscript/37CPA_rep_3/S0_exprMat_file.csv.gz",
+              "filename": "S0_exprMat_file.csv.gz",
+              "size_bytes": 312952659,
+              "last_modified": "2026-03-03T16:10:23.994Z"
+            },
+            {
+              "key": "wtx_manuscript/37CPA_rep_3/S0_fov_positions_file.csv.gz",
+              "filename": "S0_fov_positions_file.csv.gz",
+              "size_bytes": 1581,
+              "last_modified": "2026-03-03T16:10:24.520Z"
+            },
+            {
+              "key": "wtx_manuscript/37CPA_rep_3/S0_metadata_file.csv.gz",
+              "filename": "S0_metadata_file.csv.gz",
+              "size_bytes": 10238453,
+              "last_modified": "2026-03-03T16:10:24.961Z"
+            },
+            {
+              "key": "wtx_manuscript/37CPA_rep_3/S0_tx_file.csv.gz",
+              "filename": "S0_tx_file.csv.gz",
+              "size_bytes": 3886651755,
+              "last_modified": "2026-03-03T16:10:25.447Z"
+            },
+            {
+              "key": "wtx_manuscript/37CPA_rep_3/index_37_cpa_rep_3.html",
+              "filename": "index_37_cpa_rep_3.html",
+              "size_bytes": 2366,
+              "last_modified": "2026-03-19T14:48:35.619Z"
+            },
+            {
+              "key": "wtx_manuscript/37CPA_rep_3/md5sums.txt",
+              "filename": "md5sums.txt",
+              "size_bytes": 328,
+              "last_modified": "2026-03-03T16:10:22.381Z"
+            }
+          ]
+        },
+        {
+          "group_id": "wtx_manuscript/brain_hippocampus",
+          "display_name": "Brain Hippocampus",
+          "total_size_bytes": 67516850824,
+          "file_count": 9,
+          "latest_modified": "2026-03-19T14:51:58.888Z",
+          "files": [
+            {
+              "key": "wtx_manuscript/brain_hippocampus/Napari.zip",
+              "filename": "Napari.zip",
+              "size_bytes": 60116904714,
+              "last_modified": "2026-03-03T16:12:42.799Z"
+            },
+            {
+              "key": "wtx_manuscript/brain_hippocampus/README_hippocampus.html",
+              "filename": "README_hippocampus.html",
+              "size_bytes": 690159,
+              "last_modified": "2026-03-03T16:12:43.299Z"
+            },
+            {
+              "key": "wtx_manuscript/brain_hippocampus/S0-polygons.csv.gz",
+              "filename": "S0-polygons.csv.gz",
+              "size_bytes": 27480473,
+              "last_modified": "2026-03-03T16:12:45.695Z"
+            },
+            {
+              "key": "wtx_manuscript/brain_hippocampus/S0_exprMat_file.csv.gz",
+              "filename": "S0_exprMat_file.csv.gz",
+              "size_bytes": 298399466,
+              "last_modified": "2026-03-03T16:12:43.738Z"
+            },
+            {
+              "key": "wtx_manuscript/brain_hippocampus/S0_fov_positions_file.csv.gz",
+              "filename": "S0_fov_positions_file.csv.gz",
+              "size_bytes": 2967,
+              "last_modified": "2026-03-03T16:12:44.174Z"
+            },
+            {
+              "key": "wtx_manuscript/brain_hippocampus/S0_metadata_file.csv.gz",
+              "filename": "S0_metadata_file.csv.gz",
+              "size_bytes": 10786495,
+              "last_modified": "2026-03-03T16:12:44.667Z"
+            },
+            {
+              "key": "wtx_manuscript/brain_hippocampus/S0_tx_file.csv.gz",
+              "filename": "S0_tx_file.csv.gz",
+              "size_bytes": 7062583814,
+              "last_modified": "2026-03-03T16:12:45.126Z"
+            },
+            {
+              "key": "wtx_manuscript/brain_hippocampus/index_hippocampus.html",
+              "filename": "index_hippocampus.html",
+              "size_bytes": 2408,
+              "last_modified": "2026-03-19T14:51:58.888Z"
+            },
+            {
+              "key": "wtx_manuscript/brain_hippocampus/md5sums.txt",
+              "filename": "md5sums.txt",
+              "size_bytes": 328,
+              "last_modified": "2026-03-03T16:12:42.239Z"
+            }
+          ]
+        },
+        {
+          "group_id": "wtx_manuscript/breast_discovery",
+          "display_name": "Breast Discovery",
+          "total_size_bytes": 89036859304,
+          "file_count": 9,
+          "latest_modified": "2026-03-19T14:52:15.706Z",
+          "files": [
+            {
+              "key": "wtx_manuscript/breast_discovery/Napari.zip",
+              "filename": "Napari.zip",
+              "size_bytes": 74247451352,
+              "last_modified": "2026-03-03T15:37:59.958Z"
+            },
+            {
+              "key": "wtx_manuscript/breast_discovery/README_breastcancer.html",
+              "filename": "README_breastcancer.html",
+              "size_bytes": 690063,
+              "last_modified": "2026-03-03T15:38:00.477Z"
+            },
+            {
+              "key": "wtx_manuscript/breast_discovery/S0-polygons.csv.gz",
+              "filename": "S0-polygons.csv.gz",
+              "size_bytes": 114896749,
+              "last_modified": "2026-03-03T15:38:03.202Z"
+            },
+            {
+              "key": "wtx_manuscript/breast_discovery/S0_exprMat_file.csv.gz",
+              "filename": "S0_exprMat_file.csv.gz",
+              "size_bytes": 1208117260,
+              "last_modified": "2026-03-03T15:38:01.018Z"
+            },
+            {
+              "key": "wtx_manuscript/breast_discovery/S0_fov_positions_file.csv.gz",
+              "filename": "S0_fov_positions_file.csv.gz",
+              "size_bytes": 3275,
+              "last_modified": "2026-03-03T15:38:01.609Z"
+            },
+            {
+              "key": "wtx_manuscript/breast_discovery/S0_metadata_file.csv.gz",
+              "filename": "S0_metadata_file.csv.gz",
+              "size_bytes": 50407889,
+              "last_modified": "2026-03-03T15:38:02.178Z"
+            },
+            {
+              "key": "wtx_manuscript/breast_discovery/S0_tx_file.csv.gz",
+              "filename": "S0_tx_file.csv.gz",
+              "size_bytes": 13415289985,
+              "last_modified": "2026-03-03T15:38:02.713Z"
+            },
+            {
+              "key": "wtx_manuscript/breast_discovery/index_breast_cancer.html",
+              "filename": "index_breast_cancer.html",
+              "size_bytes": 2403,
+              "last_modified": "2026-03-19T14:52:15.706Z"
+            },
+            {
+              "key": "wtx_manuscript/breast_discovery/md5sums.txt",
+              "filename": "md5sums.txt",
+              "size_bytes": 328,
+              "last_modified": "2026-03-03T15:37:59.427Z"
+            }
+          ]
+        },
+        {
+          "group_id": "wtx_manuscript/colon_discovery",
+          "display_name": "Colon Discovery",
+          "total_size_bytes": 81174422507,
+          "file_count": 9,
+          "latest_modified": "2026-03-19T14:52:32.568Z",
+          "files": [
+            {
+              "key": "wtx_manuscript/colon_discovery/Napari.zip",
+              "filename": "Napari.zip",
+              "size_bytes": 68761369125,
+              "last_modified": "2026-03-03T16:19:22.910Z"
+            },
+            {
+              "key": "wtx_manuscript/colon_discovery/README_coloncancer.html",
+              "filename": "README_coloncancer.html",
+              "size_bytes": 690228,
+              "last_modified": "2026-03-03T16:19:23.438Z"
+            },
+            {
+              "key": "wtx_manuscript/colon_discovery/S0-polygons.csv.gz",
+              "filename": "S0-polygons.csv.gz",
+              "size_bytes": 95760550,
+              "last_modified": "2026-03-03T16:19:26.247Z"
+            },
+            {
+              "key": "wtx_manuscript/colon_discovery/S0_exprMat_file.csv.gz",
+              "filename": "S0_exprMat_file.csv.gz",
+              "size_bytes": 879595204,
+              "last_modified": "2026-03-03T16:19:23.846Z"
+            },
+            {
+              "key": "wtx_manuscript/colon_discovery/S0_fov_positions_file.csv.gz",
+              "filename": "S0_fov_positions_file.csv.gz",
+              "size_bytes": 4044,
+              "last_modified": "2026-03-03T16:19:24.363Z"
+            },
+            {
+              "key": "wtx_manuscript/colon_discovery/S0_metadata_file.csv.gz",
+              "filename": "S0_metadata_file.csv.gz",
+              "size_bytes": 39073339,
+              "last_modified": "2026-03-03T16:19:24.859Z"
+            },
+            {
+              "key": "wtx_manuscript/colon_discovery/S0_tx_file.csv.gz",
+              "filename": "S0_tx_file.csv.gz",
+              "size_bytes": 11397927299,
+              "last_modified": "2026-03-03T16:19:25.361Z"
+            },
+            {
+              "key": "wtx_manuscript/colon_discovery/index_colon_crc.html",
+              "filename": "index_colon_crc.html",
+              "size_bytes": 2390,
+              "last_modified": "2026-03-19T14:52:32.568Z"
+            },
+            {
+              "key": "wtx_manuscript/colon_discovery/md5sums.txt",
+              "filename": "md5sums.txt",
+              "size_bytes": 328,
+              "last_modified": "2026-03-03T16:19:22.415Z"
+            }
+          ]
+        },
+        {
+          "group_id": "wtx_manuscript/kidney_discovery",
+          "display_name": "Kidney Discovery",
+          "total_size_bytes": 74162835975,
+          "file_count": 9,
+          "latest_modified": "2026-03-19T14:54:19.860Z",
+          "files": [
+            {
+              "key": "wtx_manuscript/kidney_discovery/Napari.zip",
+              "filename": "Napari.zip",
+              "size_bytes": 65714797823,
+              "last_modified": "2026-03-03T15:52:18.121Z"
+            },
+            {
+              "key": "wtx_manuscript/kidney_discovery/README_kidney.html",
+              "filename": "README_kidney.html",
+              "size_bytes": 690036,
+              "last_modified": "2026-03-03T15:52:18.576Z"
+            },
+            {
+              "key": "wtx_manuscript/kidney_discovery/S0-polygons.csv.gz",
+              "filename": "S0-polygons.csv.gz",
+              "size_bytes": 89398424,
+              "last_modified": "2026-03-03T15:52:21.290Z"
+            },
+            {
+              "key": "wtx_manuscript/kidney_discovery/S0_exprMat_file.csv.gz",
+              "filename": "S0_exprMat_file.csv.gz",
+              "size_bytes": 668201810,
+              "last_modified": "2026-03-03T15:52:19.306Z"
+            },
+            {
+              "key": "wtx_manuscript/kidney_discovery/S0_fov_positions_file.csv.gz",
+              "filename": "S0_fov_positions_file.csv.gz",
+              "size_bytes": 3197,
+              "last_modified": "2026-03-03T15:52:19.761Z"
+            },
+            {
+              "key": "wtx_manuscript/kidney_discovery/S0_metadata_file.csv.gz",
+              "filename": "S0_metadata_file.csv.gz",
+              "size_bytes": 34091650,
+              "last_modified": "2026-03-03T15:52:20.271Z"
+            },
+            {
+              "key": "wtx_manuscript/kidney_discovery/S0_tx_file.csv.gz",
+              "filename": "S0_tx_file.csv.gz",
+              "size_bytes": 7655650310,
+              "last_modified": "2026-03-03T15:52:20.750Z"
+            },
+            {
+              "key": "wtx_manuscript/kidney_discovery/index_kidney_rcc.html",
+              "filename": "index_kidney_rcc.html",
+              "size_bytes": 2397,
+              "last_modified": "2026-03-19T14:54:19.860Z"
+            },
+            {
+              "key": "wtx_manuscript/kidney_discovery/md5sums.txt",
+              "filename": "md5sums.txt",
+              "size_bytes": 328,
+              "last_modified": "2026-03-03T15:52:17.543Z"
+            }
+          ]
+        },
+        {
+          "group_id": "wtx_manuscript/pancreas_discovery",
+          "display_name": "Pancreas Discovery",
+          "total_size_bytes": 46279278493,
+          "file_count": 9,
+          "latest_modified": "2026-03-19T14:53:41.241Z",
+          "files": [
+            {
+              "key": "wtx_manuscript/pancreas_discovery/Napari.zip",
+              "filename": "Napari.zip",
+              "size_bytes": 39824315393,
+              "last_modified": "2026-03-03T16:17:10.449Z"
+            },
+            {
+              "key": "wtx_manuscript/pancreas_discovery/README_pancreas.html",
+              "filename": "README_pancreas.html",
+              "size_bytes": 689898,
+              "last_modified": "2026-03-03T16:17:10.955Z"
+            },
+            {
+              "key": "wtx_manuscript/pancreas_discovery/S0-polygons.csv.gz",
+              "filename": "S0-polygons.csv.gz",
+              "size_bytes": 69037883,
+              "last_modified": "2026-03-03T16:17:13.537Z"
+            },
+            {
+              "key": "wtx_manuscript/pancreas_discovery/S0_exprMat_file.csv.gz",
+              "filename": "S0_exprMat_file.csv.gz",
+              "size_bytes": 479418990,
+              "last_modified": "2026-03-03T16:17:11.465Z"
+            },
+            {
+              "key": "wtx_manuscript/pancreas_discovery/S0_fov_positions_file.csv.gz",
+              "filename": "S0_fov_positions_file.csv.gz",
+              "size_bytes": 2745,
+              "last_modified": "2026-03-03T16:17:11.904Z"
+            },
+            {
+              "key": "wtx_manuscript/pancreas_discovery/S0_metadata_file.csv.gz",
+              "filename": "S0_metadata_file.csv.gz",
+              "size_bytes": 31795563,
+              "last_modified": "2026-03-03T16:17:12.505Z"
+            },
+            {
+              "key": "wtx_manuscript/pancreas_discovery/S0_tx_file.csv.gz",
+              "filename": "S0_tx_file.csv.gz",
+              "size_bytes": 5874015288,
+              "last_modified": "2026-03-03T16:17:12.981Z"
+            },
+            {
+              "key": "wtx_manuscript/pancreas_discovery/index_pancreas.html",
+              "filename": "index_pancreas.html",
+              "size_bytes": 2405,
+              "last_modified": "2026-03-19T14:53:41.241Z"
+            },
+            {
+              "key": "wtx_manuscript/pancreas_discovery/md5sums.txt",
+              "filename": "md5sums.txt",
+              "size_bytes": 328,
+              "last_modified": "2026-03-03T16:17:10.024Z"
+            }
+          ]
+        },
+        {
+          "group_id": "wtx_manuscript/skin_scc",
+          "display_name": "Skin Scc",
+          "total_size_bytes": 93401303297,
+          "file_count": 9,
+          "latest_modified": "2026-03-19T14:53:10.028Z",
+          "files": [
+            {
+              "key": "wtx_manuscript/skin_scc/Napari.zip",
+              "filename": "Napari.zip",
+              "size_bytes": 73629849162,
+              "last_modified": "2026-03-03T16:14:31.670Z"
+            },
+            {
+              "key": "wtx_manuscript/skin_scc/README_skincancer.html",
+              "filename": "README_skincancer.html",
+              "size_bytes": 690209,
+              "last_modified": "2026-03-03T16:14:32.242Z"
+            },
+            {
+              "key": "wtx_manuscript/skin_scc/S0-polygons.csv.gz",
+              "filename": "S0-polygons.csv.gz",
+              "size_bytes": 108057985,
+              "last_modified": "2026-03-03T16:14:34.845Z"
+            },
+            {
+              "key": "wtx_manuscript/skin_scc/S0_exprMat_file.csv.gz",
+              "filename": "S0_exprMat_file.csv.gz",
+              "size_bytes": 1284798954,
+              "last_modified": "2026-03-03T16:14:32.915Z"
+            },
+            {
+              "key": "wtx_manuscript/skin_scc/S0_fov_positions_file.csv.gz",
+              "filename": "S0_fov_positions_file.csv.gz",
+              "size_bytes": 6242,
+              "last_modified": "2026-03-03T16:14:33.386Z"
+            },
+            {
+              "key": "wtx_manuscript/skin_scc/S0_metadata_file.csv.gz",
+              "filename": "S0_metadata_file.csv.gz",
+              "size_bytes": 42993460,
+              "last_modified": "2026-03-03T16:14:33.837Z"
+            },
+            {
+              "key": "wtx_manuscript/skin_scc/S0_tx_file.csv.gz",
+              "filename": "S0_tx_file.csv.gz",
+              "size_bytes": 18334904628,
+              "last_modified": "2026-03-03T16:14:34.346Z"
+            },
+            {
+              "key": "wtx_manuscript/skin_scc/index_skin_scc.html",
+              "filename": "index_skin_scc.html",
+              "size_bytes": 2329,
+              "last_modified": "2026-03-19T14:53:10.028Z"
+            },
+            {
+              "key": "wtx_manuscript/skin_scc/md5sums.txt",
+              "filename": "md5sums.txt",
+              "size_bytes": 328,
+              "last_modified": "2026-03-03T16:14:31.261Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

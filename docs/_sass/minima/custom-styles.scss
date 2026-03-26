@@ -6,3 +6,120 @@
   padding-right: 24px;
 }
 
+/* Tab navigation */
+.site-tabs {
+  display: flex;
+  gap: 0;
+  border-bottom: 2px solid #444;
+  margin-bottom: 24px;
+}
+
+.tab-link {
+  padding: 10px 20px;
+  text-decoration: none;
+  color: #aaa;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -2px;
+  font-size: 14px;
+
+  &:hover {
+    color: #fff;
+    text-decoration: none;
+  }
+
+  &.active {
+    color: #fff;
+    border-bottom-color: #58a6ff;
+    font-weight: bold;
+  }
+}
+
+/* Bruker page — group sections */
+.bruker-group {
+  margin-bottom: 12px;
+  border: 1px solid #333;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.bruker-group > summary,
+.bruker-subgroup > summary {
+  cursor: pointer;
+  padding: 10px 14px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  background: #1e1e1e;
+  list-style: none;
+  user-select: none;
+}
+
+.bruker-group > summary::before,
+.bruker-subgroup > summary::before {
+  content: "▶";
+  font-size: 10px;
+  color: #888;
+  flex-shrink: 0;
+}
+
+.bruker-group[open] > summary::before,
+.bruker-subgroup[open] > summary::before {
+  content: "▼";
+}
+
+.bruker-group-body {
+  padding: 0 14px 12px 14px;
+}
+
+.bruker-subgroup {
+  margin: 8px 0 0 0;
+  border: 1px solid #2a2a2a;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.bruker-subgroup > summary {
+  background: #161616;
+  padding: 8px 12px;
+}
+
+.bruker-subgroup-body {
+  padding: 0 12px 10px 12px;
+}
+
+.group-meta {
+  color: #888;
+  font-size: 12px;
+}
+
+.pill-yes {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 11px;
+  background: #1a4731;
+  color: #3fb950;
+  border: 1px solid #238636;
+}
+
+.pill-converted {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 11px;
+  background: #1a2f4d;
+  color: #58a6ff;
+  border: 1px solid #1f6feb;
+}
+
+.pill-uploaded {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 11px;
+  background: #2d1f47;
+  color: #bc8cff;
+  border: 1px solid #8957e5;
+}
+
