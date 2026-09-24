@@ -132,3 +132,65 @@ def fold_new(
                 row[k] = enriched.get(k, row[k])
         out.append(row)
     return out
+
+
+def load_uid_keyspace(path: str) -> set[str]:
+    with open(path, newline="", encoding="utf-8") as f:
+        reader = csv.DictReader(f, delimiter=";")
+        return {(r.get("uid") or "").strip() for r in reader if (r.get("uid") or "").strip()}
+
+
+def check_keyspace(registry: list[dict[str, str]], keyspace: set[str]) -> list[str]:
+    bad = []
+    for r in registry:
+        uid = (r.get("local_uid") or "").strip()
+        if uid and uid not in keyspace:
+            bad.append(uid)
+    return sorted(set(bad))
+
+
+def reconcile(
+    registry: list[dict[str, str]], scrape: list[dict[str, str]], keyspace: set[str]
+) -> tuple[list[dict[str, str]], list[dict[str, str]]]:
+    linked, unmatched = backfill_uids(registry, scrape)
+    folded = fold_new(linked, scrape)
+    bad = check_keyspace(folded, keyspace)
+    if bad:
+        raise ValueError(f"UIDs not in keyspace registry/uids.csv: {bad}")
+    return folded, unmatched
+
+
+def write_unmatched(path: str, rows: list[dict[str, str]]) -> None:
+    import os
+    os.makedirs(os.path.dirname(path), exist_ok=True)
+    fieldnames = list(rows[0].keys()) if rows else ["dataset_id", "name", "primary_source", "Replicate"]
+    with open(path, "w", newline="", encoding="utf-8") as f:
+        w = csv.DictWriter(f, fieldnames=fieldnames)
+        w.writeheader()
+        for r in rows:
+            w.writerow(r)
+
+
+def main(argv: list[str] | None = None) -> int:
+    ap = argparse.ArgumentParser(description=__doc__)
+    ap.add_argument("--check", action="store_true", help="nonzero exit if a run would change outputs")
+    args = ap.parse_args(argv)
+
+    registry = load_registry(REGISTRY)
+    scrape = load_scrape(SCRAPE)
+    keyspace = load_uid_keyspace(UIDS)
+    new_registry, unmatched = reconcile(registry, scrape, keyspace)
+
+    if args.check:
+        changed = new_registry != registry
+        print("CHANGED" if changed else "OK")
+        return 1 if changed else 0
+
+    write_registry(REGISTRY, new_registry)
+    write_unmatched(UNMATCHED, unmatched)
+    print(f"registry rows: {len(new_registry)}  unmatched: {len(unmatched)}")
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
