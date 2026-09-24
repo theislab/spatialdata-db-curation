@@ -93,3 +93,41 @@ def backfill_uids(
             unmatched.append(row)
         out.append(row)
     return out, unmatched
+
+
+def build_notes(scrape_row: dict[str, str]) -> str:
+    parts = [f"{k}={scrape_row[k].strip()}" for k in NOTE_FIELDS
+             if (scrape_row.get(k) or "").strip()]
+    return "; ".join(parts)
+
+
+def fold_new(
+    registry: list[dict[str, str]], scrape: list[dict[str, str]]
+) -> list[dict[str, str]]:
+    if not registry:
+        raise ValueError("registry must be non-empty to supply column schema")
+    fieldnames = list(registry[0].keys())
+    have = {(r.get("local_uid") or "").strip() for r in registry}
+    out = [dict(r) for r in registry]
+    seen: set[str] = set()
+    for s in scrape:
+        uid = (s.get("uid") or "").strip()
+        if not uid or uid in have or uid in seen:
+            continue
+        seen.add(uid)
+        row = {c: "" for c in fieldnames}
+        for src, dst in SCRAPE_TO_REGISTRY.items():
+            if dst in row:
+                row[dst] = (s.get(src) or "").strip()
+        if "manufacturer" in row:
+            row["manufacturer"] = "10x Genomics"
+        if "primary_source_type" in row:
+            row["primary_source_type"] = "url"
+        if "notes" in row:
+            row["notes"] = build_notes(s)
+        enriched = ensure_fingerprints_row(dict(row))
+        for k in ("dataset_id", "primary_fingerprint"):
+            if k in row:
+                row[k] = enriched.get(k, row[k])
+        out.append(row)
+    return out
