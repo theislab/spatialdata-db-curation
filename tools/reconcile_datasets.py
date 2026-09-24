@@ -135,10 +135,74 @@ def fold_new(
     return out
 
 
-def load_uid_keyspace(path: str) -> set[str]:
+def load_keyspace_rows(path: str) -> list[dict[str, str]]:
+    """Load the full ``uid;source;id`` keyspace rows (never mutated)."""
     with open(path, newline="", encoding="utf-8") as f:
         reader = csv.DictReader(f, delimiter=";")
-        return {(r.get("uid") or "").strip() for r in reader if (r.get("uid") or "").strip()}
+        return [
+            {
+                "uid": (r.get("uid") or "").strip(),
+                "source": (r.get("source") or "").strip(),
+                "id": (r.get("id") or "").strip(),
+            }
+            for r in reader
+        ]
+
+
+def load_uid_keyspace(path: str) -> set[str]:
+    return {r["uid"] for r in load_keyspace_rows(path) if r["uid"]}
+
+
+def free_10x_uids(keyspace_rows: list[dict[str, str]], used: set[str]) -> list[str]:
+    """Sorted 10x Genomics uids with no assigned id and not already `used`."""
+    return sorted(
+        r["uid"]
+        for r in keyspace_rows
+        if r.get("source") == "10x Genomics" and not (r.get("id") or "").strip()
+        and r["uid"] not in used
+    )
+
+
+def mint_missing_uids(
+    registry: list[dict[str, str]], keyspace_rows: list[dict[str, str]]
+) -> list[dict[str, str]]:
+    """Fill every empty ``local_uid`` with a fresh, never-reused 10x uid.
+
+    Existing non-empty ``local_uid`` values are retained untouched. Minting
+    is deterministic (uids are consumed in sorted order) and never reuses a
+    uid already assigned elsewhere in the registry or minted earlier in this
+    same call.
+    """
+    used = {(r.get("local_uid") or "").strip() for r in registry if (r.get("local_uid") or "").strip()}
+    pool = iter(free_10x_uids(keyspace_rows, used))
+    out: list[dict[str, str]] = []
+    for row in registry:
+        row = dict(row)
+        if not (row.get("local_uid") or "").strip():
+            try:
+                new_uid = next(pool)
+            except StopIteration:
+                raise ValueError("free 10x uid pool exhausted while minting missing uids")
+            row["local_uid"] = new_uid
+        out.append(row)
+    return out
+
+
+def check_unique(registry: list[dict[str, str]]) -> list[str]:
+    """Return offending ``local_uid`` values: duplicates, plus an "<empty>" sentinel
+    for any row with a blank ``local_uid``."""
+    seen: dict[str, int] = {}
+    empty = 0
+    for r in registry:
+        uid = (r.get("local_uid") or "").strip()
+        if not uid:
+            empty += 1
+            continue
+        seen[uid] = seen.get(uid, 0) + 1
+    offenders = sorted(uid for uid, count in seen.items() if count > 1)
+    if empty:
+        offenders.append(f"<empty> x{empty}")
+    return offenders
 
 
 def check_keyspace(registry: list[dict[str, str]], keyspace: set[str]) -> list[str]:
@@ -151,14 +215,25 @@ def check_keyspace(registry: list[dict[str, str]], keyspace: set[str]) -> list[s
 
 
 def reconcile(
-    registry: list[dict[str, str]], scrape: list[dict[str, str]], keyspace: set[str]
+    registry: list[dict[str, str]],
+    scrape: list[dict[str, str]],
+    keyspace_rows: list[dict[str, str]],
 ) -> tuple[list[dict[str, str]], list[dict[str, str]]]:
-    linked, unmatched = backfill_uids(registry, scrape)
+    linked, _ = backfill_uids(registry, scrape)
     folded = fold_new(linked, scrape)
-    bad = check_keyspace(folded, keyspace)
+    minted = mint_missing_uids(folded, keyspace_rows)
+
+    keyspace = {r["uid"] for r in keyspace_rows if r["uid"]}
+    bad = check_keyspace(minted, keyspace)
     if bad:
         raise ValueError(f"UIDs not in keyspace registry/uids.csv: {bad}")
-    return folded, unmatched
+
+    offenders = check_unique(minted)
+    if offenders:
+        raise ValueError(f"local_uid not unique/complete after minting: {offenders}")
+
+    unmatched = [r for r in minted if not (r.get("local_uid") or "").strip()]
+    return minted, unmatched
 
 
 def write_unmatched(path: str, rows: list[dict[str, str]]) -> None:
@@ -178,8 +253,8 @@ def main(argv: list[str] | None = None) -> int:
 
     registry = load_registry(REGISTRY)
     scrape = load_scrape(SCRAPE)
-    keyspace = load_uid_keyspace(UIDS)
-    new_registry, unmatched = reconcile(registry, scrape, keyspace)
+    keyspace_rows = load_keyspace_rows(UIDS)
+    new_registry, unmatched = reconcile(registry, scrape, keyspace_rows)
 
     if args.check:
         changed = new_registry != registry
