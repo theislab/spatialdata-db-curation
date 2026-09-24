@@ -13,6 +13,7 @@ from __future__ import annotations
 
 import argparse
 import csv
+import os
 
 from canon import (
     canonical_source,
@@ -161,7 +162,6 @@ def reconcile(
 
 
 def write_unmatched(path: str, rows: list[dict[str, str]]) -> None:
-    import os
     os.makedirs(os.path.dirname(path), exist_ok=True)
     fieldnames = list(rows[0].keys()) if rows else ["dataset_id", "name", "primary_source", "Replicate"]
     with open(path, "w", newline="", encoding="utf-8") as f:
