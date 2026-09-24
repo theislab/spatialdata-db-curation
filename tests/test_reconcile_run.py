@@ -19,10 +19,16 @@ def _scrape(**kw):
     return base
 
 
+def _kspace(*uids, source="10x Genomics", used=()):
+    used = set(used)
+    return [{"uid": u, "source": source, "id": "reserved" if u in used else ""}
+            for u in uids]
+
+
 def test_reconcile_rejects_uid_outside_keyspace():
     reg = [_reg(local_uid="10zzz", dataset_id="ds_x")]
     try:
-        rc.reconcile(reg, [], keyspace={"10aaa"})
+        rc.reconcile(reg, [], _kspace("10aaa"))
         assert False, "expected ValueError"
     except ValueError as e:
         assert "10zzz" in str(e)
@@ -33,8 +39,8 @@ def test_reconcile_is_idempotent():
                 Replicate="1")]
     scrape = [_scrape(dataset_link="https://x/b", Replicate="1", uid="10bbb",
                       Datasets="B")]
-    keyspace = {"10aaa", "10bbb"}
-    first, un1 = rc.reconcile(reg, scrape, keyspace)
-    second, un2 = rc.reconcile(first, scrape, keyspace)
+    keyspace_rows = _kspace("10aaa", "10bbb")
+    first, un1 = rc.reconcile(reg, scrape, keyspace_rows)
+    second, un2 = rc.reconcile(first, scrape, keyspace_rows)
     assert first == second
     assert un1 == un2
