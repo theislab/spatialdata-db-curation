@@ -232,7 +232,9 @@ def reconcile(
     if offenders:
         raise ValueError(f"local_uid not unique/complete after minting: {offenders}")
 
-    unmatched = [r for r in minted if not (r.get("local_uid") or "").strip()]
+    # check_unique above already raised if any local_uid were empty, so every
+    # row now has one — the report is always empty.
+    unmatched: list[dict[str, str]] = []
     return minted, unmatched
 
 

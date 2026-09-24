@@ -160,3 +160,12 @@ def test_reconcile_mint_is_idempotent_end_to_end():
     second, un2 = rc.reconcile(first, scrape, keyspace_rows)
     assert first == second
     assert un1 == un2 == []
+
+
+def test_reconcile_raises_on_duplicate_local_uid():
+    reg = [_reg(local_uid="10aaa", dataset_id="ds_a"),
+           _reg(local_uid="10aaa", dataset_id="ds_b")]
+    # keyspace must contain 10aaa so it's the uniqueness check (not keyspace) that fires
+    with pytest.raises(ValueError) as e:
+        rc.reconcile(reg, [], keyspace_rows=[{"uid": "10aaa", "source": "10x Genomics", "id": ""}])
+    assert "10aaa" in str(e.value)
