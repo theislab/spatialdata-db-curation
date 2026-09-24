@@ -52,3 +52,44 @@ def load_scrape(path: str) -> list[dict[str, str]]:
 def source_fp(url: str | None) -> str:
     c = canonical_source(url or "")
     return fingerprint(c) if c else ""
+
+
+def scrape_key(row: dict[str, str]) -> tuple[str, str]:
+    return (source_fp(row.get("dataset_link", "")), (row.get("Replicate") or "").strip())
+
+
+def registry_key(row: dict[str, str]) -> tuple[str, str]:
+    fp = (row.get("primary_fingerprint") or "").strip() or source_fp(row.get("primary_source", ""))
+    return (fp, (row.get("Replicate") or "").strip())
+
+
+def _scrape_uid_index(scrape: list[dict[str, str]]) -> dict[tuple[str, str], set[str]]:
+    idx: dict[tuple[str, str], set[str]] = {}
+    for r in scrape:
+        fp, rep = scrape_key(r)
+        uid = (r.get("uid") or "").strip()
+        if not fp or not rep or not uid:
+            continue
+        idx.setdefault((fp, rep), set()).add(uid)
+    return idx
+
+
+def backfill_uids(
+    registry: list[dict[str, str]], scrape: list[dict[str, str]]
+) -> tuple[list[dict[str, str]], list[dict[str, str]]]:
+    idx = _scrape_uid_index(scrape)
+    out: list[dict[str, str]] = []
+    unmatched: list[dict[str, str]] = []
+    for row in registry:
+        row = dict(row)
+        if (row.get("local_uid") or "").strip():
+            out.append(row)
+            continue
+        fp, rep = registry_key(row)
+        uids = idx.get((fp, rep), set()) if fp and rep else set()
+        if len(uids) == 1:
+            row["local_uid"] = next(iter(uids))
+        else:
+            unmatched.append(row)
+        out.append(row)
+    return out, unmatched
