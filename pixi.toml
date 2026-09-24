@@ -2,11 +2,18 @@
 authors = ["Tim Treis <tim.treis@stud.uni-heidelberg.de>"]
 channels = ["conda-forge"]
 name = "spatialdata-db-curation"
-platforms = ["osx-arm64"]
+platforms = ["osx-arm64", "linux-64"]
 version = "0.1.0"
 
 [tasks]
+test = "pytest -q"
 
 [dependencies]
 pandas = ">=2.3.2,<3"
 ipykernel = ">=6.30.1,<7"
+
+[feature.test.dependencies]
+pytest = "*"
+
+[environments]
+default = ["test"]
