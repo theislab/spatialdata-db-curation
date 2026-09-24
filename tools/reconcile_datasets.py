@@ -35,6 +35,7 @@ SCRAPE_TO_REGISTRY = {
     "dataset_link": "primary_source",
     "Publish Date": "release_date",
     "uid": "local_uid",
+    "Replicate": "Replicate",
 }
 NOTE_FIELDS = [
     "Chemistry Version", "Subpipeline", "Species", "Disease State",
